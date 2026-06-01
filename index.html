@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Rishi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Film grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header>
+    <h1>a map of the people who love you</h1>
+    <p class="header-tagline">Happy Birthday, Rishi ♥</p>
+  </header>
+
+  <!-- Timeline filter -->
+  <section class="timeline-section">
+    <p class="timeline-label">
+      Showing friendships started in <span id="yearDisplay">all years</span>
+    </p>
+    <div class="slider-track-wrap">
+      <span class="slider-bound" id="minYearLabel"></span>
+      <div class="dual-slider">
+        <div class="dual-slider-track"></div>
+        <div class="dual-slider-fill" id="sliderFill"></div>
+        <input type="range" id="yearSliderMin" min="2000" max="2025" value="2000" step="1" />
+        <input type="range" id="yearSliderMax" min="2000" max="2025" value="2025" step="1" />
+      </div>
+      <span class="slider-bound" id="maxYearLabel"></span>
+    </div>
+  </section>
+
+  <!-- Map container -->
+  <main class="map-container">
+    <svg id="us-map" viewBox="-90 -60 1140 720" preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg">
+
+      <!-- US States — injected from us_map_paths.js -->
+      <g id="states-layer" stroke="#b8976a" stroke-width="0.7" stroke-linejoin="round"></g>
+
+      <!-- Connection arcs — over states, under pins -->
+      <g id="arcs-layer"></g>
+
+      <!-- Pins layer -->
+      <g id="pins-layer"></g>
+
+    </svg>
+  </main>
+
+  <!-- Modal overlay -->
+  <div id="modal-overlay" class="hidden" role="dialog" aria-modal="true" aria-label="Friend video">
+    <div id="modal-box">
+      <button id="modal-close" aria-label="Close">&times;</button>
+      <div id="modal-video-wrap">
+        <iframe id="modal-iframe"
+          allow="autoplay; fullscreen"
+          allowfullscreen
+          frameborder="0"
+          src="about:blank">
+        </iframe>
+      </div>
+      <div id="modal-info">
+        <h2 id="modal-name"></h2>
+        <p id="modal-city"></p>
+        <p id="modal-year"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>made with love &nbsp;♥</p>
+  </footer>
+
+  <script src="us_map_paths.js"></script>
+  <script src="friends.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

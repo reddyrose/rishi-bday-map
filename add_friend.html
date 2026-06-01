@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add a Friend — Birthday Map</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --parchment: #f5ead6; --parchment-2: #ede0c4;
+      --ink: #3b2a1a; --rust: #a0442a; --tan: #c8a96e;
+      --sepia: #7a5c38; --cream: #fdf6e8;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--parchment);
+      color: var(--ink);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem 3rem;
+    }
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+    .subtitle {
+      font-style: italic;
+      color: var(--sepia);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    form {
+      background: var(--cream);
+      border: 1.5px solid var(--tan);
+      border-radius: 6px;
+      padding: 2rem;
+      width: min(540px, 100%);
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      box-shadow: 0 4px 20px rgba(59,42,26,0.1);
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--sepia);
+    }
+    input {
+      font-family: 'Lato', sans-serif;
+      font-size: 1rem;
+      padding: 0.55rem 0.75rem;
+      border: 1.5px solid var(--tan);
+      border-radius: 4px;
+      background: var(--parchment);
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus { border-color: var(--rust); }
+    .hint {
+      font-size: 0.73rem;
+      color: var(--sepia);
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    button {
+      margin-top: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--rust);
+      color: var(--cream);
+      border: none;
+      border-radius: 4px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #8a3520; }
+
+    #output-section {
+      margin-top: 2rem;
+      width: min(540px, 100%);
+      display: none;
+    }
+    #output-section h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      color: var(--ink);
+    }
+    #output-section p {
+      font-size: 0.82rem;
+      color: var(--sepia);
+      margin-bottom: 0.6rem;
+      font-style: italic;
+    }
+    #snippet {
+      background: #2a1a0e;
+      color: #f5d9a8;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      padding: 1.1rem 1.3rem;
+      border-radius: 5px;
+      white-space: pre;
+      overflow-x: auto;
+    }
+    #copy-btn {
+      margin-top: 0.7rem;
+      background: var(--sepia);
+      font-size: 0.85rem;
+      padding: 0.5rem 1.1rem;
+    }
+    #copy-btn:hover { background: var(--rust); }
+    #copy-confirm {
+      display: inline-block;
+      margin-left: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--rust);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-style: italic;
+    }
+
+    /* coordinate helper */
+    .coord-helper {
+      background: var(--parchment-2);
+      border: 1px solid var(--tan);
+      border-radius: 4px;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.78rem;
+      color: var(--sepia);
+    }
+    .coord-helper strong { color: var(--rust); }
+    .coord-table { width: 100%; border-collapse: collapse; margin-top: 0.4rem; }
+    .coord-table td { padding: 0.15rem 0.5rem; }
+    .coord-table td:first-child { font-weight: 400; color: var(--ink); }
+    .coord-table td:last-child { font-family: monospace; font-size: 0.75rem; }
+
+    .metro-group { margin-top: 0.75rem; }
+    .metro-label {
+      font-size: 0.72rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--rust);
+      margin-bottom: 0.2rem;
+      border-bottom: 1px solid var(--tan);
+      padding-bottom: 0.15rem;
+    }
+
+    a.back { font-size: 0.82rem; color: var(--rust); text-decoration: none; margin-bottom: 1.2rem; display: block; }
+    a.back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <a class="back" href="index.html">← Back to the map</a>
+
+  <h1>Add a Friend</h1>
+  <p class="subtitle">Fill in the fields below to generate the config snippet for <code>friends.js</code></p>
+
+  <form id="friend-form">
+    <label>
+      Name
+      <input type="text" id="f-name" placeholder="e.g. Priya" required />
+    </label>
+
+    <label>
+      City &amp; State
+      <input type="text" id="f-city" placeholder="e.g. Brooklyn, NY" required />
+    </label>
+
+    <label>
+      Year met / became friends
+      <input type="number" id="f-year" placeholder="e.g. 2015" min="1990" max="2030" required />
+    </label>
+
+    <div class="row">
+      <label>
+        SVG X position
+        <input type="number" id="f-svgx" placeholder="e.g. 780" required />
+      </label>
+      <label>
+        SVG Y position
+        <input type="number" id="f-svgy" placeholder="e.g. 198" required />
+      </label>
+    </div>
+
+    <div class="coord-helper">
+      <strong>Quick city coordinates</strong>
+      <span style="font-weight:300; font-style:italic; color:var(--sepia)">
+        — pins that land close together auto-spread into a fan, no action needed
+      </span>
+
+      <div class="metro-group">
+        <div class="metro-label">🗽 New York City metro</div>
+        <table class="coord-table">
+          <tr><td>Manhattan</td>          <td>svgX: 846, svgY: 217</td></tr>
+          <tr><td>Brooklyn</td>           <td>svgX: 847, svgY: 218</td></tr>
+          <tr><td>Queens</td>             <td>svgX: 848, svgY: 215</td></tr>
+          <tr><td>The Bronx</td>          <td>svgX: 848, svgY: 214</td></tr>
+          <tr><td>Hoboken / Jersey City</td><td>svgX: 845, svgY: 217</td></tr>
+          <tr><td>Long Island (Nassau)</td><td>svgX: 851, svgY: 218</td></tr>
+        </table>
+      </div>
+
+      <div class="metro-group">
+        <div class="metro-label">🌉 Bay Area</div>
+        <table class="coord-table">
+          <tr><td>San Francisco</td>      <td>svgX:  46, svgY: 259</td></tr>
+          <tr><td>Oakland</td>            <td>svgX:  48, svgY: 259</td></tr>
+          <tr><td>Berkeley</td>           <td>svgX:  49, svgY: 258</td></tr>
+          <tr><td>Marin County</td>       <td>svgX:  45, svgY: 255</td></tr>
+          <tr><td>Palo Alto / Stanford</td><td>svgX: 48, svgY: 267</td></tr>
+          <tr><td>Mountain View</td>      <td>svgX:  49, svgY: 269</td></tr>
+          <tr><td>Sunnyvale / Cupertino</td><td>svgX: 50, svgY: 270</td></tr>
+          <tr><td>San Jose</td>           <td>svgX:  52, svgY: 270</td></tr>
+          <tr><td>Fremont / Hayward</td>  <td>svgX:  51, svgY: 265</td></tr>
+          <tr><td>Redwood City / Menlo Park</td><td>svgX: 47, svgY: 266</td></tr>
+          <tr><td>South SF / Daly City</td><td>svgX: 45, svgY: 261</td></tr>
+        </table>
+      </div>
+
+      <div class="metro-group">
+        <div class="metro-label">Other cities</div>
+        <table class="coord-table">
+          <tr><td>Boston</td>             <td>svgX: 884, svgY: 172</td></tr>
+          <tr><td>Philadelphia</td>       <td>svgX: 831, svgY: 237</td></tr>
+          <tr><td>Washington DC</td>      <td>svgX: 806, svgY: 265</td></tr>
+          <tr><td>Chicago</td>            <td>svgX: 624, svgY: 226</td></tr>
+          <tr><td>Detroit</td>            <td>svgX: 696, svgY: 209</td></tr>
+          <tr><td>Minneapolis</td>        <td>svgX: 532, svgY: 166</td></tr>
+          <tr><td>Seattle</td>            <td>svgX: 106, svgY:  60</td></tr>
+          <tr><td>Portland, OR</td>       <td>svgX:  88, svgY: 100</td></tr>
+          <tr><td>Los Angeles</td>        <td>svgX:  95, svgY: 353</td></tr>
+          <tr><td>San Diego</td>          <td>svgX: 108, svgY: 385</td></tr>
+          <tr><td>Las Vegas</td>          <td>svgX: 159, svgY: 321</td></tr>
+          <tr><td>Phoenix</td>            <td>svgX: 201, svgY: 387</td></tr>
+          <tr><td>Denver</td>             <td>svgX: 341, svgY: 271</td></tr>
+          <tr><td>Salt Lake City</td>     <td>svgX: 231, svgY: 235</td></tr>
+          <tr><td>Dallas</td>             <td>svgX: 475, svgY: 425</td></tr>
+          <tr><td>Austin</td>             <td>svgX: 457, svgY: 478</td></tr>
+          <tr><td>Houston</td>            <td>svgX: 502, svgY: 489</td></tr>
+          <tr><td>San Antonio</td>        <td>svgX: 443, svgY: 496</td></tr>
+          <tr><td>New Orleans</td>        <td>svgX: 601, svgY: 482</td></tr>
+          <tr><td>Atlanta</td>            <td>svgX: 698, svgY: 392</td></tr>
+          <tr><td>Miami</td>             <td>svgX: 801, svgY: 547</td></tr>
+          <tr><td>Nashville</td>          <td>svgX: 650, svgY: 346</td></tr>
+          <tr><td>Charlotte</td>          <td>svgX: 756, svgY: 353</td></tr>
+          <tr><td>Raleigh</td>            <td>svgX: 792, svgY: 335</td></tr>
+          <tr><td>Pittsburgh</td>         <td>svgX: 751, svgY: 241</td></tr>
+          <tr><td>St. Louis</td>          <td>svgX: 587, svgY: 298</td></tr>
+          <tr><td>Kansas City</td>        <td>svgX: 514, svgY: 291</td></tr>
+          <tr><td>Memphis</td>            <td>svgX: 595, svgY: 372</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <label>
+      Google Drive File ID
+      <input type="text" id="f-drive" placeholder="1AbCdEfGhIjKlMnOpQrStUvWxYz" required />
+      <span class="hint">
+        From the share link: drive.google.com/file/d/<strong>FILE_ID</strong>/view
+      </span>
+    </label>
+
+    <label style="flex-direction: row; align-items: center; gap: 0.6rem; cursor: pointer;">
+      <input type="checkbox" id="f-vertical" style="width:16px;height:16px;accent-color:var(--rust);cursor:pointer;" />
+      <span>Video is vertical / portrait (filmed on a phone, taller than wide)</span>
+    </label>
+
+    <button type="submit">Generate snippet</button>
+  </form>
+
+  <div id="output-section">
+    <h2>Copy this into <code>friends.js</code></h2>
+    <p>Paste it inside the <code>friends = [&nbsp;…&nbsp;]</code> array, after any existing entry.</p>
+    <pre id="snippet"></pre>
+    <button id="copy-btn" type="button">Copy to clipboard</button>
+    <span id="copy-confirm">Copied!</span>
+  </div>
+
+  <script>
+    const form = document.getElementById('friend-form');
+    const outputSection = document.getElementById('output-section');
+    const snippet = document.getElementById('snippet');
+    const copyBtn = document.getElementById('copy-btn');
+    const copyConfirm = document.getElementById('copy-confirm');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const name     = document.getElementById('f-name').value.trim();
+      const city     = document.getElementById('f-city').value.trim();
+      const year     = document.getElementById('f-year').value.trim();
+      const svgX     = document.getElementById('f-svgx').value.trim();
+      const svgY     = document.getElementById('f-svgy').value.trim();
+      const drive    = document.getElementById('f-drive').value.trim()
+                         .replace(/.*\/d\/([^\/\?]+).*/,'$1');
+      const vertical = document.getElementById('f-vertical').checked;
+
+      const text =
+`  {
+    name:     "${name}",
+    city:     "${city}",
+    yearMet:  ${year},
+    svgX:     ${svgX},
+    svgY:     ${svgY},
+    driveId:  "${drive}",${vertical ? '\n    vertical: true,' : ''}
+  },`;
+
+      snippet.textContent = text;
+      outputSection.style.display = 'block';
+      outputSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    copyBtn.addEventListener('click', function () {
+      navigator.clipboard.writeText(snippet.textContent).then(() => {
+        copyConfirm.style.opacity = '1';
+        setTimeout(() => { copyConfirm.style.opacity = '0'; }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
