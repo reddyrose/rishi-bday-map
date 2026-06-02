@@ -61,15 +61,6 @@ const friends = [
     driveId: "1HBOxRsZDw9mtMbZDiBiHpQWRZdfJOWSU"
   },
   {
-    name:    "Vignesh",
-    city:    "Boston, MA",
-    yearMet: 2021,
-    svgX:    879,
-    svgY:    168,
-    vertical: true,
-    driveId: "REPLACE_WITH_DRIVE_ID"
-  },
-  {
     name:    "Adyant",
     city:    "Nashua, NH",
     yearMet: 2021,
@@ -80,10 +71,10 @@ const friends = [
   },
   {
     name: "Marcus",
-    city: "Stanford, CA",
+    city: "Orlando, FL",
     yearMet: 2021,
-    svgX:    48,
-    svgY:    262,
+    svgX:    769,
+    svgY:    494,
     vertical: true,
     driveId: "1xu4KzuUzReeDqIRt3NUo871hPFcIWEWh"
   },
@@ -143,17 +134,17 @@ const friends = [
   },
   {
     name:    "Corrie",
-    city:    "Stanford, CA",
+    city:    "Boston, MA",
     yearMet: 2021,
-    svgX:    48,
-    svgY:    267,
+    svgX:    884,
+    svgY:    172,
     vertical: true,
     driveId: "1Ja6euKm950jeM2iCchrRoqlsqNAU8clT"
   },
   {
     name:    "Kevin",
     city:    "NYC",
-    yearMet: 2015,
+    yearMet: 2014,
     svgX:    846,
     svgY:    217,
     vertical: true,
@@ -162,7 +153,7 @@ const friends = [
   {
     name:    "Krishna",
     city:    "NYC",
-    yearMet: 2015,
+    yearMet: 2014,
     svgX:    846,
     svgY:    217,
     vertical: true,
@@ -171,7 +162,7 @@ const friends = [
   {
     name:    "Norah",
     city:    "Seattle, WA",
-    yearMet: 2015,
+    yearMet: 2014,
     svgX:    100,
     svgY:    60,
     vertical: true,
@@ -185,6 +176,15 @@ const friends = [
     svgY:    267,
     vertical: true,
     driveId: "1ncB9TUmyXYK3PkIX8A1Iy6o3Jop4RJqF"
+  },
+  {
+    name:    "Sherry",
+    city:    "San Francisco, CA",
+    yearMet: 2024,
+    svgX:    46,
+    svgY:    259,
+    vertical: true,
+    driveId: "1E9AREJHCauv0Th3CLZOTgdSC-upexhNp"
   },
   {
     name:    "Raghav",
@@ -203,15 +203,6 @@ const friends = [
     svgY:    259,
     vertical: true,
     driveId: "TBD"
-  },
-  {
-    name:    "Sherry",
-    city:    "San Francisco, CA",
-    yearMet: 2024,
-    svgX:    46,
-    svgY:    259,
-    vertical: true,
-    driveId: "1E9AREJHCauv0Th3CLZOTgdSC-upexhNp"
   },
   {
     name:    "Artur",
@@ -237,6 +228,69 @@ const friends = [
     yearMet: 2021,
     svgX:    846,
     svgY:    219,
+    vertical: true,
+    driveId: "TBD"
+  },
+  {
+    name:    "Kimi",
+    city:    "Berkeley, CA",
+    yearMet: 2021,
+    svgX:    49,
+    svgY:    258,
+    vertical: true,
+    driveId: "TBD"
+  },
+  {
+    name:    "Ritwik",
+    city:    "Stanford, CA",
+    yearMet: 2021,
+    svgX:    48,
+    svgY:    267,
+    vertical: true,
+    driveId: "TBD"
+  },
+  {
+    name:    "Vignesh",
+    city:    "Boston, MA",
+    yearMet: 2021,
+    svgX:    879,
+    svgY:    168,
+    vertical: true,
+    driveId: "REPLACE_WITH_DRIVE_ID"
+  },
+  {
+    name:    "Khusbhu",
+    city:    "Boston, MA",
+    yearMet: 2021,
+    svgX:    879,
+    svgY:    168,
+    vertical: true,
+    driveId: "REPLACE_WITH_DRIVE_ID"
+  },
+  {
+    name:    "Gaby",
+    city:    "NYC",
+    yearMet: 2014,
+    svgX:    846,
+    svgY:    219,
+    vertical: true,
+    driveId: "TBD"
+  },
+  {
+    name:    "Avika",
+    city:    "NYC",
+    yearMet: 2022,
+    svgX:    846,
+    svgY:    219,
+    vertical: true,
+    driveId: "TBD"
+  },
+  {
+    name:    "Rohit",
+    city:    "Detroit, MI",
+    yearMet: 2026,
+    svgX:    696,
+    svgY:    209,
     vertical: true,
     driveId: "TBD"
   },
