@@ -136,8 +136,8 @@ const friends = [
     name:    "Corrie",
     city:    "Boston, MA",
     yearMet: 2021,
-    svgX:    884,
-    svgY:    172,
+    svgX:    879,
+    svgY:    168,
     vertical: true,
     driveId: "1Ja6euKm950jeM2iCchrRoqlsqNAU8clT"
   },
@@ -238,7 +238,7 @@ const friends = [
     svgX:    49,
     svgY:    258,
     vertical: true,
-    driveId: "TBD"
+    driveId: "13t0pu-bThTQ7jAexQQ-lswVZQGKTc4OF"
   },
   {
     name:    "Ritwik",
