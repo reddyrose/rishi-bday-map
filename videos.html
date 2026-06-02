@@ -56,6 +56,16 @@
     }
     .back-link:hover { opacity: 1; color: var(--rust); }
     .back-link::before { content: '← '; }
+    .loading-note {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 0.75rem;
+      color: var(--sepia);
+      opacity: 0.7;
+      margin-top: 0.2rem;
+      letter-spacing: 0.03em;
+    }
 
     /* ── Year sections ───────────────────────────────────── */
     .year-section { max-width: 1100px; margin: 2.5rem auto 0; padding: 0 1.5rem; }
@@ -199,6 +209,7 @@
     <a class="back-link" href="index.html">back to the map</a>
     <h1>all the messages</h1>
     <p>new folks every year</p>
+    <p class="loading-note">bear with us — the videos take a second to load</p>
   </header>
 
   <div id="videos-root"></div>

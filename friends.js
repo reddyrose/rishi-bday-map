@@ -206,7 +206,7 @@ const friends = [
     yearMet: 2024,
     svgX:    46,
     svgY:    259,
-    driveId: "TBD"
+    driveId: "1E9AREJHCauv0Th3CLZOTgdSC-upexhNp"
   },
   {
     name:    "Artur",
@@ -214,7 +214,7 @@ const friends = [
     yearMet: 2024,
     svgX:    46,
     svgY:    259,
-    driveId: "TBD"
+    driveId: "1xu4KzuUzReeDqIRt3NUo871hPFcIWEWh"
   },
   {
     name:    "Kohi",
