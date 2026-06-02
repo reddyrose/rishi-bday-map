@@ -57,6 +57,7 @@ const friends = [
     yearMet: 2025,
     svgX:    846,
     svgY:    219,
+    vertical: true,
     driveId: "1HBOxRsZDw9mtMbZDiBiHpQWRZdfJOWSU"
   },
   {
@@ -73,6 +74,7 @@ const friends = [
     yearMet: 2021,
     svgX:    879,
     svgY:    168,
+    vertical: true,
     driveId: "1RByU8AQtKZ_RqvGJrE9J0A28cre_vMp_"
   },
   {
@@ -89,6 +91,7 @@ const friends = [
     yearMet: 2025,
     svgX:    846,
     svgY:    217,
+    vertical: true,
     driveId: "1-Btx95CEAikxrSYToUOeN1mFB8mpvXsd"
   },
   {
@@ -97,6 +100,7 @@ const friends = [
     yearMet: 2021,
     svgX:    48,
     svgY:    262,
+    vertical: true,
     driveId: "13TEBiyUl90SS-p_Y_hxqD_AjMjsvfNF7"
   },
   {
@@ -105,6 +109,7 @@ const friends = [
     yearMet: 2022,
     svgX:    846,
     svgY:    219,
+    vertical: true,
     driveId: "1gT0rGtxA3e5pEuI1UHKHpF4-YMYSpEKg"
   },
   {
@@ -113,6 +118,7 @@ const friends = [
     yearMet: 2023,
     svgX:    48,
     svgY:    267,
+    vertical: true,
     driveId: "1vTbULriZUzbWdLQh1DiK0LR4zX9zE6CQ"
   },
   {
@@ -121,6 +127,7 @@ const friends = [
     yearMet: 2021,
     svgX:    48,
     svgY:    267,
+    vertical: true,
     driveId: "1B55VppDRTu8a_B4ZY0jv3zdhtGahmKYu"
   },
   {
@@ -129,6 +136,7 @@ const friends = [
     yearMet: 2023,
     svgX:    48,
     svgY:    267,
+    vertical: true,
     driveId: "1YddlBZ1Rsg4_QW2stlshTFIU3B1DieRc"
   },
   {
@@ -137,6 +145,7 @@ const friends = [
     yearMet: 2021,
     svgX:    48,
     svgY:    267,
+    vertical: true,
     driveId: "1Ja6euKm950jeM2iCchrRoqlsqNAU8clT"
   },
   {
@@ -145,6 +154,7 @@ const friends = [
     yearMet: 2015,
     svgX:    846,
     svgY:    217,
+    vertical: true,
     driveId: "1Gfmeok0bRRCE4yBEiBFwDajLrwF-OSln"
   },
   {
@@ -153,6 +163,7 @@ const friends = [
     yearMet: 2015,
     svgX:    846,
     svgY:    217,
+    vertical: true,
     driveId: "1chtVCfHP6GN2PrVKSHwq2jLm3Tstpqu0"
   },
   {
@@ -161,6 +172,7 @@ const friends = [
     yearMet: 2015,
     svgX:    100,
     svgY:    60,
+    vertical: true,
     driveId: "1ZBJCRLcyvKRiSJqdM1Wl5GzXwzyj3Y6P"
   },
   {
@@ -169,6 +181,7 @@ const friends = [
     yearMet: 2025,
     svgX:    48,
     svgY:    267,
+    vertical: true,
     driveId: "1ncB9TUmyXYK3PkIX8A1Iy6o3Jop4RJqF"
   },
   {
