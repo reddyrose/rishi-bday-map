@@ -66,6 +66,7 @@ const friends = [
     yearMet: 2021,
     svgX:    879,
     svgY:    168,
+    vertical: true,
     driveId: "REPLACE_WITH_DRIVE_ID"
   },
   {
@@ -83,7 +84,8 @@ const friends = [
     yearMet: 2021,
     svgX:    48,
     svgY:    262,
-    driveId: "REPLACE_WITH_DRIVE_ID"
+    vertical: true,
+    driveId: "1xu4KzuUzReeDqIRt3NUo871hPFcIWEWh"
   },
   {
     name:    "Sarah",
@@ -190,6 +192,7 @@ const friends = [
     yearMet: 2021,
     svgX:    48,
     svgY:    267,
+    vertical: true,
     driveId: "TBD"
   },
   {
@@ -198,6 +201,7 @@ const friends = [
     yearMet: 2024,
     svgX:    46,
     svgY:    259,
+    vertical: true,
     driveId: "TBD"
   },
   {
@@ -206,6 +210,7 @@ const friends = [
     yearMet: 2024,
     svgX:    46,
     svgY:    259,
+    vertical: true,
     driveId: "1E9AREJHCauv0Th3CLZOTgdSC-upexhNp"
   },
   {
@@ -214,7 +219,8 @@ const friends = [
     yearMet: 2024,
     svgX:    46,
     svgY:    259,
-    driveId: "1xu4KzuUzReeDqIRt3NUo871hPFcIWEWh"
+    vertical: true,
+    driveId: "TBD"
   },
   {
     name:    "Kohi",
@@ -222,6 +228,7 @@ const friends = [
     yearMet: 2024,
     svgX:    846,
     svgY:    219,
+    vertical: true,
     driveId: "TBD"
   },
   {
@@ -230,6 +237,7 @@ const friends = [
     yearMet: 2021,
     svgX:    846,
     svgY:    219,
+    vertical: true,
     driveId: "TBD"
   },
 ];
