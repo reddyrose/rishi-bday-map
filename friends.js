@@ -64,7 +64,7 @@ const friends = [
     city:    "Boston, MA",
     yearMet: 2021,
     svgX:    879,
-    svgY:    172,
+    svgY:    168,
     driveId: "REPLACE_WITH_DRIVE_ID"
   },
   {
@@ -170,6 +170,54 @@ const friends = [
     svgX:    48,
     svgY:    267,
     driveId: "1ncB9TUmyXYK3PkIX8A1Iy6o3Jop4RJqF"
+  },
+  {
+    name:    "Raghav",
+    city:    "Stanford, CA",
+    yearMet: 2021,
+    svgX:    48,
+    svgY:    267,
+    driveId: "TBD"
+  },
+  {
+    name:    "Liz",
+    city:    "San Francisco, CA",
+    yearMet: 2024,
+    svgX:    46,
+    svgY:    259,
+    driveId: "TBD"
+  },
+  {
+    name:    "Sherry",
+    city:    "San Francisco, CA",
+    yearMet: 2024,
+    svgX:    46,
+    svgY:    259,
+    driveId: "TBD"
+  },
+  {
+    name:    "Artur",
+    city:    "San Francisco, CA",
+    yearMet: 2024,
+    svgX:    46,
+    svgY:    259,
+    driveId: "TBD"
+  },
+  {
+    name:    "Kohi",
+    city:    "NYC",
+    yearMet: 2024,
+    svgX:    846,
+    svgY:    219,
+    driveId: "TBD"
+  },
+  {
+    name:    "Saloni",
+    city:    "NYC",
+    yearMet: 2021,
+    svgX:    846,
+    svgY:    219,
+    driveId: "TBD"
   },
 ];
 

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Messages — Happy Birthday Rishi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Page-specific overrides ─────────────────────────── */
+    body { padding-bottom: 4rem; }
+
+    .videos-header {
+      text-align: center;
+      padding: 2rem 1rem 1.2rem;
+      background: linear-gradient(180deg, var(--parchment-2) 0%, var(--parchment) 100%);
+      border-bottom: 2px solid var(--tan);
+      position: relative;
+    }
+    .videos-header::after {
+      content: '';
+      display: block;
+      height: 4px;
+      background: repeating-linear-gradient(
+        90deg, var(--rust) 0, var(--rust) 6px, transparent 6px, transparent 12px
+      );
+      margin-top: 1rem;
+      opacity: 0.4;
+    }
+    .videos-header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.3rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.3rem;
+    }
+    .videos-header p {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      color: var(--rust);
+      font-size: 0.95rem;
+    }
+    .back-link {
+      position: absolute;
+      left: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.82rem;
+      color: var(--sepia);
+      text-decoration: none;
+      font-family: 'Lato', sans-serif;
+      opacity: 0.75;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .back-link:hover { opacity: 1; color: var(--rust); }
+    .back-link::before { content: '← '; }
+
+    /* ── Year sections ───────────────────────────────────── */
+    .year-section { max-width: 1100px; margin: 2.5rem auto 0; padding: 0 1.5rem; }
+
+    .year-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+    .year-heading span {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--sepia);
+      white-space: nowrap;
+    }
+    .year-heading::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--tan);
+    }
+
+    /* ── Card grid ───────────────────────────────────────── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    /* ── Individual card ─────────────────────────────────── */
+    .video-card {
+      background: var(--cream);
+      box-shadow:
+        0 0 0 1px #c8a96e,
+        0 0 0 5px var(--cream),
+        0 0 0 6px #b8976a,
+        0 6px 28px rgba(30,18,8,0.14);
+      border-radius: 2px;
+      padding: 1rem 1rem 1.1rem;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .video-card:hover {
+      transform: translateY(-3px) rotate(0.3deg);
+      box-shadow:
+        0 0 0 1px #c8a96e,
+        0 0 0 5px var(--cream),
+        0 0 0 6px #b8976a,
+        0 12px 36px rgba(30,18,8,0.22);
+    }
+
+    /* Washi tape top-center */
+    .video-card::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1deg);
+      width: 48px;
+      height: 18px;
+      background: rgba(210,185,130,0.55);
+      border: 1px solid rgba(180,150,90,0.3);
+      border-radius: 1px;
+    }
+
+    /* Slight random tilt per card — set via JS */
+    .video-frame {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0e0906;
+      overflow: hidden;
+      outline: 3px solid #2a1a0e;
+      box-shadow:
+        0 0 0 7px var(--cream),
+        0 0 0 8px #b8976a;
+      position: relative;
+    }
+    .video-card.vertical .video-frame {
+      aspect-ratio: 9 / 16;
+      max-height: 420px;
+    }
+    /* Photo corners */
+    .video-frame::before,
+    .video-frame::after {
+      content: '';
+      position: absolute;
+      width: 12px; height: 12px;
+      border-color: var(--tan-dark);
+      border-style: solid;
+      opacity: 0.5;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .video-frame::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .video-frame::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+    .video-frame iframe {
+      width: 100%; height: 100%;
+      border: none; display: block;
+    }
+
+    /* Placeholder for TBD videos */
+    .video-placeholder {
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.4rem;
+      color: rgba(255,255,255,0.3);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 0.85rem;
+    }
+    .video-placeholder::before { content: '🎬'; font-size: 1.6rem; opacity: 0.4; font-style: normal; }
+
+    .card-info {
+      text-align: center;
+      margin-top: 0.9rem;
+    }
+    .card-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 0.1rem;
+    }
+    .card-city {
+      font-size: 0.75rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--sepia);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="videos-header">
+    <a class="back-link" href="index.html">back to the map</a>
+    <h1>all the messages</h1>
+    <p>every person, every year</p>
+  </header>
+
+  <div id="videos-root"></div>
+
+  <script src="friends.js"></script>
+  <script>
+    const root = document.getElementById('videos-root');
+
+    // Sort by yearMet ascending, then group
+    const sorted = [...friends].sort((a, b) => a.yearMet - b.yearMet);
+    const byYear = {};
+    for (const f of sorted) {
+      (byYear[f.yearMet] = byYear[f.yearMet] || []).push(f);
+    }
+
+    // Slight random tilts for character
+    const tilts = [-1.2, 0.8, -0.5, 1.4, -0.9, 0.4, -1.6, 1.1, -0.3, 1.8];
+    let tiltIdx = 0;
+
+    for (const year of Object.keys(byYear).sort()) {
+      const section = document.createElement('div');
+      section.className = 'year-section';
+
+      const heading = document.createElement('div');
+      heading.className = 'year-heading';
+      heading.innerHTML = `<span>${year}</span>`;
+      section.appendChild(heading);
+
+      const grid = document.createElement('div');
+      grid.className = 'cards-grid';
+
+      for (const friend of byYear[year]) {
+        const card = document.createElement('div');
+        card.className = 'video-card' + (friend.vertical ? ' vertical' : '');
+        const tilt = tilts[tiltIdx++ % tilts.length];
+        card.style.transform = `rotate(${tilt}deg)`;
+
+        const frame = document.createElement('div');
+        frame.className = 'video-frame';
+
+        const hasDrive = friend.driveId && friend.driveId !== 'TBD' && !friend.driveId.startsWith('REPLACE');
+
+        if (hasDrive) {
+          const iframe = document.createElement('iframe');
+          iframe.src = `https://drive.google.com/file/d/${friend.driveId}/preview`;
+          iframe.allow = 'autoplay; fullscreen';
+          iframe.allowFullscreen = true;
+          // Lazy-load so videos don't all buffer at once
+          iframe.loading = 'lazy';
+          frame.appendChild(iframe);
+        } else {
+          const ph = document.createElement('div');
+          ph.className = 'video-placeholder';
+          ph.textContent = 'coming soon';
+          frame.appendChild(ph);
+        }
+
+        const info = document.createElement('div');
+        info.className = 'card-info';
+        info.innerHTML = `
+          <div class="card-name">${friend.name}</div>
+          <div class="card-city">${friend.city}</div>
+        `;
+
+        card.appendChild(frame);
+        card.appendChild(info);
+        grid.appendChild(card);
+      }
+
+      section.appendChild(grid);
+      root.appendChild(section);
+    }
+  </script>
+</body>
+</html>
