@@ -433,8 +433,6 @@ header h1 {
   flex: 1;
   border: none;
   display: block;
-  transform: scale(1.22);
-  transform-origin: center center;
 }
 
 /* Photo corner accents */
