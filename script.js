@@ -76,8 +76,8 @@
   // ── Cluster spreading ─────────────────────────────────────
   // Pins within CLUSTER_R px of each other are fanned out so they're all clickable.
   // Arcs always connect to the original geographic position.
-  const CLUSTER_R   = 40;   // px on the 960×600 SVG canvas
-  const PIN_D       = 26;   // effective pin diameter (px) — pins must not overlap
+  const CLUSTER_R   = 70;   // px on the 960×600 SVG canvas — large enough to merge nearby metros
+  const PIN_D       = 28;   // effective pin diameter (px) — pins must not overlap
   // SPREAD_R is computed dynamically per cluster so every pin fits without overlap
 
   function computeDisplayPositions(friendList) {
