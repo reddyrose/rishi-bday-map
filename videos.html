@@ -282,11 +282,10 @@
 
         if (hasDrive) {
           const iframe = document.createElement('iframe');
-          iframe.src = `https://drive.google.com/file/d/${friend.driveId}/preview`;
+          const driveUrl = `https://drive.google.com/file/d/${friend.driveId}/preview`;
+          iframe.dataset.src = driveUrl;   // hold src until visible
           iframe.allow = 'autoplay; fullscreen';
           iframe.allowFullscreen = true;
-          // Lazy-load so videos don't all buffer at once
-          iframe.loading = 'lazy';
           frame.appendChild(iframe);
         } else {
           const ph = document.createElement('div');
@@ -310,6 +309,23 @@
       section.appendChild(grid);
       root.appendChild(section);
     }
+
+    // Load iframes one at a time as they scroll into view,
+    // with a staggered delay so Drive isn't hit with many requests at once.
+    let loadQueue = Promise.resolve();
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const iframe = entry.target;
+        observer.unobserve(iframe);
+        loadQueue = loadQueue.then(() => new Promise(resolve => {
+          iframe.src = iframe.dataset.src;
+          setTimeout(resolve, 300); // 300ms gap between each Drive request
+        }));
+      });
+    }, { rootMargin: '200px' }); // start loading 200px before entering viewport
+
+    document.querySelectorAll('iframe[data-src]').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>

@@ -211,7 +211,7 @@ const friends = [
     svgX:    46,
     svgY:    259,
     vertical: true,
-    driveId: "TBD"
+    driveId: "1w12VP1H__gIfBrISw1bquVuxr9KWYsqK"
   },
   {
     name:    "Artur",
@@ -229,7 +229,7 @@ const friends = [
     svgX:    846,
     svgY:    219,
     vertical: true,
-    driveId: "TBD"
+    driveId: "1-KAG0HipeuM7RJWJF8GJVe8U-yxlHAL6"
   },
   {
     name:    "Saloni",
@@ -283,7 +283,7 @@ const friends = [
     svgX:    846,
     svgY:    219,
     vertical: true,
-    driveId: "TBD"
+    driveId: "189tKlfDHJdv7DSpMtwEbZWX8HH4CTtjS"
   },
   {
     name:    "Avika",
