@@ -229,7 +229,7 @@ const friends = [
     svgX:    46,
     svgY:    259,
     vertical: true,
-    driveId: "16ZJU31I0dBKwXvcj0DQqCveLyrXgGNas"
+    driveId: "1vUzFACbRcV205oJ33qOCvYEQTGZ_p1Rv"
   },
   {
     name:    "Priyanka",

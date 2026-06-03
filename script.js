@@ -77,8 +77,8 @@
   // Pins within CLUSTER_R px of each other are fanned out so they're all clickable.
   // Arcs always connect to the original geographic position.
   const CLUSTER_R   = 40;   // px on the 960×600 SVG canvas
-  const SPREAD_R    = 38;   // radius of the fan spread
-  const SPREAD_GAP  = 20;   // minimum arc-length gap between spread pins (px)
+  const PIN_D       = 26;   // effective pin diameter (px) — pins must not overlap
+  // SPREAD_R is computed dynamically per cluster so every pin fits without overlap
 
   function computeDisplayPositions(friendList) {
     const n = friendList.length;
@@ -112,19 +112,28 @@
       const cx = cluster.reduce((s, i) => s + friendList[i].svgX, 0) / cluster.length;
       const cy = cluster.reduce((s, i) => s + friendList[i].svgY, 0) / cluster.length;
 
-      // Fan upward from the centroid in a semicircular arc
       const count = cluster.length;
-      const minSpread = (count - 1) * SPREAD_GAP / SPREAD_R;
-      const totalArc  = Math.max(minSpread, Math.PI * 0.55 * Math.min(count / 3, 1) + Math.PI * 0.25);
+
+      // Use a full circle for large clusters, semicircle for small ones
+      const totalArc = count >= 7 ? Math.PI * 2 : Math.PI * 1.1;
+
+      // Radius large enough that adjacent pins don't overlap:
+      // arc-length between pins = totalArc/count * R >= PIN_D
+      const minR = (PIN_D * count) / totalArc;
+      const SPREAD_R = Math.max(minR, 38);
 
       // Fan toward the map center so edge clusters spread inward, never off-screen
       const MAP_CX = 480, MAP_CY = 300;
-      const dx = MAP_CX - cx, dy = MAP_CY - cy;
-      const centerAngle = Math.atan2(dy, dx);
-      const startAngle  = centerAngle - totalArc / 2;
+      const dxC = MAP_CX - cx, dyC = MAP_CY - cy;
+      const centerAngle = Math.atan2(dyC, dxC);
+      // For full circle start at top; for semicircle centre the fan toward map centre
+      const startAngle = totalArc >= Math.PI * 2
+        ? -Math.PI / 2
+        : centerAngle - totalArc / 2;
 
       cluster.forEach((idx, k) => {
-        const angle = startAngle + (count === 1 ? 0 : k * totalArc / (count - 1));
+        // For full circle evenly space without repeating the start angle
+        const angle = startAngle + k * totalArc / (totalArc >= Math.PI * 2 ? count : (count - 1));
         display[idx] = {
           x: cx + SPREAD_R * Math.cos(angle),
           y: cy + SPREAD_R * Math.sin(angle),
