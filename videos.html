@@ -166,10 +166,13 @@
     .video-frame::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
 
     .video-frame iframe {
-      width: 100%; height: 100%;
-      border: none; display: block;
-      transform: scale(1.04);
-      transform-origin: center center;
+      position: absolute;
+      top: -45px;
+      left: -2%;
+      width: 104%;
+      height: calc(100% + 90px);
+      border: none;
+      display: block;
     }
 
     /* Placeholder for TBD videos */

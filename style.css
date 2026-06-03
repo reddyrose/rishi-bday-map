@@ -428,14 +428,13 @@ header h1 {
 }
 
 #modal-iframe {
-  width: 100%;
-  height: 100%;
-  flex: 1;
+  position: absolute;
+  top: -45px;
+  left: -2%;
+  width: 104%;
+  height: calc(100% + 90px);
   border: none;
   display: block;
-  /* Overscale slightly to crop Drive's player toolbar so video fills the frame */
-  transform: scale(1.04);
-  transform-origin: center center;
 }
 
 /* Photo corner accents */
