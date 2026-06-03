@@ -91,6 +91,16 @@
       background: var(--tan);
     }
 
+    /* ── Year subtitle ──────────────────────────────────── */
+    .year-subtitle {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--rust);
+      margin: -0.6rem 0 1.4rem;
+      opacity: 0.85;
+    }
+
     /* ── Card grid ───────────────────────────────────────── */
     .cards-grid {
       display: grid;
@@ -227,6 +237,15 @@
       (byYear[f.yearMet] = byYear[f.yearMet] || []).push(f);
     }
 
+    const yearSubtitles = {
+      2014: "the hometown heroes",
+      2021: "freshman year explosion",
+      2022: "raas expands (look, they're in NYC!)",
+      2023: "raas expands again (visit us in the bay!)",
+      2024: "paradise in paris",
+      2025: "brand new start again",
+    };
+
     // Slight random tilts for character
     const tilts = [-1.2, 0.8, -0.5, 1.4, -0.9, 0.4, -1.6, 1.1, -0.3, 1.8];
     let tiltIdx = 0;
@@ -239,6 +258,13 @@
       heading.className = 'year-heading';
       heading.innerHTML = `<span>${year}</span>`;
       section.appendChild(heading);
+
+      if (yearSubtitles[year]) {
+        const sub = document.createElement('p');
+        sub.className = 'year-subtitle';
+        sub.textContent = yearSubtitles[year];
+        section.appendChild(sub);
+      }
 
       const grid = document.createElement('div');
       grid.className = 'cards-grid';
