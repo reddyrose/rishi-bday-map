@@ -256,7 +256,7 @@ const friends = [
     svgX:    879,
     svgY:    168,
     vertical: true,
-    driveId: "REPLACE_WITH_DRIVE_ID"
+    driveId: "1qIrzQtq0qF2yZmhWodeXesgGSuWufiQ8"
   },
   {
     name:    "Khusbhu",
@@ -282,15 +282,6 @@ const friends = [
     yearMet: 2022,
     svgX:    846,
     svgY:    219,
-    vertical: true,
-    driveId: "TBD"
-  },
-  {
-    name:    "Rohit",
-    city:    "Detroit, MI",
-    yearMet: 2026,
-    svgX:    696,
-    svgY:    209,
     vertical: true,
     driveId: "TBD"
   },
