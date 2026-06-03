@@ -159,6 +159,15 @@ const friends = [
     vertical: true,
     driveId: "1chtVCfHP6GN2PrVKSHwq2jLm3Tstpqu0"
   },
+    {
+    name:    "Karthik",
+    city:    "NYC",
+    yearMet: 2022,
+    svgX:    846,
+    svgY:    217,
+    vertical: true,
+    driveId: "TBD"
+  },
   {
     name:    "Norah",
     city:    "Seattle, WA",

@@ -433,6 +433,9 @@ header h1 {
   flex: 1;
   border: none;
   display: block;
+  /* Overscale slightly to crop Drive's player toolbar so video fills the frame */
+  transform: scale(1.04);
+  transform-origin: center center;
 }
 
 /* Photo corner accents */
