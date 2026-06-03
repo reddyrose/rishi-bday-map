@@ -310,22 +310,17 @@
       root.appendChild(section);
     }
 
-    // Load iframes one at a time as they scroll into view,
-    // with a staggered delay so Drive isn't hit with many requests at once.
-    let loadQueue = Promise.resolve();
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const iframe = entry.target;
-        observer.unobserve(iframe);
-        loadQueue = loadQueue.then(() => new Promise(resolve => {
-          iframe.src = iframe.dataset.src;
-          setTimeout(resolve, 300); // 300ms gap between each Drive request
-        }));
-      });
-    }, { rootMargin: '200px' }); // start loading 200px before entering viewport
-
-    document.querySelectorAll('iframe[data-src]').forEach(el => observer.observe(el));
+    // Load all iframes sequentially with a gap between each request.
+    // Drive rate-limits simultaneous embed requests, causing "Unable to load" errors.
+    // We collect all iframes in DOM order and load them one by one with a delay.
+    const allIframes = Array.from(document.querySelectorAll('iframe[data-src]'));
+    let delay = 800; // start 800ms after page settles
+    allIframes.forEach(iframe => {
+      setTimeout(() => {
+        iframe.src = iframe.dataset.src;
+      }, delay);
+      delay += 600; // 600ms between each Drive request
+    });
   </script>
 </body>
 </html>
