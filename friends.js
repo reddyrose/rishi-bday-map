@@ -220,6 +220,24 @@ const friends = [
     svgX:    46,
     svgY:    259,
     vertical: true,
+    driveId: "1v2HX0gKAswGzqRriuKVuNxOyitiLcnkR"
+  },
+  {
+    name:    "Ritika",
+    city:    "San Francisco, CA",
+    yearMet: 2022,
+    svgX:    46,
+    svgY:    259,
+    vertical: true,
+    driveId: "16ZJU31I0dBKwXvcj0DQqCveLyrXgGNas"
+  },
+  {
+    name:    "Priyanka",
+    city:    "San Francisco, CA",
+    yearMet: 2021,
+    svgX:    46,
+    svgY:    259,
+    vertical: true,
     driveId: "TBD"
   },
   {
@@ -238,7 +256,7 @@ const friends = [
     svgX:    846,
     svgY:    219,
     vertical: true,
-    driveId: "TBD"
+    driveId: "1PM6qSBzt9qFQvMYq1KOFvDInDK83mGaT"
   },
   {
     name:    "Kimi",
