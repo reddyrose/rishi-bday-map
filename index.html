@@ -14,6 +14,26 @@
   <!-- Film grain overlay -->
   <div class="grain" aria-hidden="true"></div>
 
+  <!-- Intro splash -->
+  <div id="intro-splash">
+    <div id="intro-content">
+      <p class="intro-eyebrow">happy 23rd birthday</p>
+      <h1 class="intro-title">Rishi.</h1>
+      <div class="intro-rule"></div>
+      <p class="intro-body">
+        you packed your bags and moved to new york —<br>
+        but you didn't leave your village behind.<br>
+        <em>they followed you.</em>
+      </p>
+      <p class="intro-body intro-body-2">
+        from stanford to seattle, boston to the bay,<br>
+        the people who love you are everywhere.<br>
+        this map is proof.
+      </p>
+      <button id="intro-enter">see the map →</button>
+    </div>
+  </div>
+
   <!-- Header -->
   <header>
     <h1>a map of the people who love you</h1>
@@ -79,6 +99,13 @@
     <p>made with love &nbsp;♥</p>
   </footer>
 
+  <script>
+    const splash = document.getElementById('intro-splash');
+    function dismissSplash() { splash.classList.add('hidden'); }
+    document.getElementById('intro-enter').addEventListener('click', dismissSplash);
+    // Also dismiss on scroll or any key
+    window.addEventListener('keydown', dismissSplash, { once: true });
+  </script>
   <script src="us_map_paths.js"></script>
   <script src="friends.js"></script>
   <script src="script.js"></script>

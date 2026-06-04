@@ -159,15 +159,6 @@ const friends = [
     vertical: true,
     driveId: "1chtVCfHP6GN2PrVKSHwq2jLm3Tstpqu0"
   },
-    {
-    name:    "Karthik",
-    city:    "NYC",
-    yearMet: 2022,
-    svgX:    846,
-    svgY:    217,
-    vertical: true,
-    driveId: "TBD"
-  },
   {
     name:    "Norah",
     city:    "Seattle, WA",
@@ -194,15 +185,6 @@ const friends = [
     svgY:    253,
     vertical: true,
     driveId: "1E9AREJHCauv0Th3CLZOTgdSC-upexhNp"
-  },
-  {
-    name:    "Raghav",
-    city:    "Stanford, CA",
-    yearMet: 2021,
-    svgX:    50,
-    svgY:    275,
-    vertical: true,
-    driveId: "TBD"
   },
   {
     name:    "Liz",
@@ -238,7 +220,7 @@ const friends = [
     svgX:    44,
     svgY:    253,
     vertical: true,
-    driveId: "TBD"
+    driveId: "130iUYiW6fqHuxQdh_6bsXmbvwXMySnBk"
   },
   {
     name:    "Kohi",
@@ -268,15 +250,6 @@ const friends = [
     driveId: "13t0pu-bThTQ7jAexQQ-lswVZQGKTc4OF"
   },
   {
-    name:    "Ritwik",
-    city:    "Stanford, CA",
-    yearMet: 2021,
-    svgX:    50,
-    svgY:    275,
-    vertical: true,
-    driveId: "TBD"
-  },
-  {
     name:    "Vignesh",
     city:    "Boston, MA",
     yearMet: 2021,
@@ -292,7 +265,7 @@ const friends = [
     svgX:    879,
     svgY:    168,
     vertical: true,
-    driveId: "REPLACE_WITH_DRIVE_ID"
+    driveId: "13MACVE9tbT885GhnDeTTB1pYBKeX7_Rj"
   },
   {
     name:    "Gaby",
@@ -309,6 +282,33 @@ const friends = [
     yearMet: 2022,
     svgX:    846,
     svgY:    219,
+    vertical: true,
+    driveId: "1nsyolDBil1IKl8aAwEsgq-4oBhKMgQI5"
+  },
+  {
+    name:    "Ritwik",
+    city:    "Stanford, CA",
+    yearMet: 2021,
+    svgX:    50,
+    svgY:    275,
+    vertical: true,
+    driveId: "TBD"
+  },
+  {
+    name:    "Raghav",
+    city:    "Stanford, CA",
+    yearMet: 2021,
+    svgX:    50,
+    svgY:    275,
+    vertical: true,
+    driveId: "TBD"
+  },
+  {
+    name:    "Karthik",
+    city:    "NYC",
+    yearMet: 2022,
+    svgX:    846,
+    svgY:    217,
     vertical: true,
     driveId: "TBD"
   },
