@@ -3,6 +3,18 @@
 (function () {
   'use strict';
 
+  // Wait for the splash to be dismissed before initialising the map,
+  // so the pin-bounce and arc animations play fresh when the map appears.
+  function init() { startMap(); }
+
+  if (document.getElementById('intro-splash')) {
+    document.getElementById('intro-splash').addEventListener('splashDone', init, { once: true });
+  } else {
+    init();
+  }
+
+  function startMap() {
+
   const $ = id => document.getElementById(id);
   const SVG_NS = 'http://www.w3.org/2000/svg';
 
@@ -339,5 +351,7 @@
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  } // end startMap
 
 })();

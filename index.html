@@ -108,9 +108,11 @@
 
   <script>
     const splash = document.getElementById('intro-splash');
-    function dismissSplash() { splash.classList.add('hidden'); }
+    function dismissSplash() {
+      splash.classList.add('hidden');
+      splash.dispatchEvent(new Event('splashDone'));
+    }
     document.getElementById('intro-enter').addEventListener('click', dismissSplash);
-    // Also dismiss on scroll or any key
     window.addEventListener('keydown', dismissSplash, { once: true });
   </script>
   <script src="us_map_paths.js"></script>
