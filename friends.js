@@ -196,6 +196,15 @@ const friends = [
     driveId: "1w12VP1H__gIfBrISw1bquVuxr9KWYsqK"
   },
   {
+    name:    "Charlotte",
+    city:    "San Francisco, CA",
+    yearMet: 2024,
+    svgX:    44,
+    svgY:    253,
+    vertical: true,
+    driveId: "1XYKnVBTrSKdwPhym3WLEmO4g_e9Z90wD"
+  },
+  {
     name:    "Artur",
     city:    "San Francisco, CA",
     yearMet: 2024,
@@ -286,32 +295,32 @@ const friends = [
     driveId: "1nsyolDBil1IKl8aAwEsgq-4oBhKMgQI5"
   },
   {
-    name:    "Ritwik",
-    city:    "Stanford, CA",
-    yearMet: 2021,
-    svgX:    50,
-    svgY:    275,
-    vertical: true,
-    driveId: "TBD"
-  },
-  {
-    name:    "Raghav",
-    city:    "Stanford, CA",
-    yearMet: 2021,
-    svgX:    50,
-    svgY:    275,
-    vertical: true,
-    driveId: "TBD"
-  },
-  {
     name:    "Karthik",
     city:    "NYC",
     yearMet: 2022,
     svgX:    846,
     svgY:    217,
     vertical: true,
-    driveId: "TBD"
+    driveId: "19KfyBACHXuJ6ORKfMBbIczHawfKCRLuF"
   },
+  // {
+  //   name:    "Ritwik",
+  //   city:    "Stanford, CA",
+  //   yearMet: 2021,
+  //   svgX:    50,
+  //   svgY:    275,
+  //   vertical: true,
+  //   driveId: "TBD"
+  // },
+  // {
+  //   name:    "Raghav",
+  //   city:    "Stanford, CA",
+  //   yearMet: 2021,
+  //   svgX:    50,
+  //   svgY:    275,
+  //   vertical: true,
+  //   driveId: "TBD"
+  // },
 ];
 
 // Home / center point — Rishi's hometown — all arcs radiate from here
