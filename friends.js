@@ -303,17 +303,17 @@ const friends = [
     vertical: true,
     driveId: "19KfyBACHXuJ6ORKfMBbIczHawfKCRLuF"
   },
+  {
+    name:    "Raghav",
+    city:    "Stanford, CA",
+    yearMet: 2021,
+    svgX:    50,
+    svgY:    275,
+    vertical: true,
+    driveId: "1dUPN_PdsXMJGqa5B3B6bV-0gjgFdCzgf"
+  },
   // {
   //   name:    "Ritwik",
-  //   city:    "Stanford, CA",
-  //   yearMet: 2021,
-  //   svgX:    50,
-  //   svgY:    275,
-  //   vertical: true,
-  //   driveId: "TBD"
-  // },
-  // {
-  //   name:    "Raghav",
   //   city:    "Stanford, CA",
   //   yearMet: 2021,
   //   svgX:    50,
