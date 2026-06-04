@@ -92,8 +92,26 @@ body {
 }
 .intro-body-2 {
   margin-top: 1rem;
-  color: var(--sepia);
   animation-delay: 1.3s;
+}
+.intro-body-3 {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--sepia);
+  animation-delay: 1.6s;
+}
+.intro-body-4 {
+  margin-top: 1rem;
+  animation-delay: 1.9s;
+}
+
+.intro-sign {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  color: var(--rust);
+  margin-top: 1.4rem;
+  opacity: 0;
+  animation: intro-fade-up 0.8s 2.2s ease forwards;
 }
 
 #intro-enter {
@@ -111,7 +129,7 @@ body {
   letter-spacing: 0.03em;
   transition: background 0.2s, color 0.2s;
   opacity: 0;
-  animation: intro-fade-up 0.8s 1.7s ease forwards;
+  animation: intro-fade-up 0.8s 2.6s ease forwards;
 }
 #intro-enter:hover {
   background: var(--rust);
